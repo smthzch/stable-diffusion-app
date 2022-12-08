@@ -1,3 +1,2 @@
-model/*
-__paycache__/
-app/__paycache__/
+model/
+__pycache__/
