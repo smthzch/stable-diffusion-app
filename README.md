@@ -4,6 +4,8 @@ This repository contains a FastApi and Streamlit app which you can use to run St
 
 The stable diffusion model is pulled from huggingface [runwayml/stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5)
 
+![](fractal_goat.png)
+
 ## Setup
 
 This was tested with python 3.9, Pytorch 1.12 on Cuda 11.6
