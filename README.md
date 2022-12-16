@@ -35,7 +35,7 @@ Prompts can be sent with a query parameter: `127.0.0.1:8000/?prompt=stable diffu
 
 ## Docker
 
-A `Dockerfile` is included, to build and run the docker container, run:
+A `Dockerfile` is included, to build and run the docker container:
 
 ```shell
 docker build -t stable-diffusion .
@@ -48,4 +48,4 @@ docker run \
 docker start stable-diffusion
 ```
 
-The `--gpus all` flag can be ommitted to run on cpu, though image generation takes upward of a minute on cpu.
+The `--gpus all` flag can be omitted to run on cpu, though image generation takes multiple minutes on cpu.
