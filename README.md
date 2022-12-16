@@ -8,7 +8,7 @@ The stable diffusion model is pulled from huggingface [runwayml/stable-diffusion
 
 ## Setup
 
-This was tested with python 3.9, Pytorch 1.12 on Cuda 11.6
+This was tested with python 3.8, Pytorch 1.12 on Cuda 11.6
 
 ```shell
 pip install -r requirements.txt
@@ -23,6 +23,8 @@ To run the graphical Streamlit app:
 streamlit run app/stream_app.py
 ```
 
+Navigate to `127.0.0.1:8501` for a web UI to send prompts to stable-diffusion.
+
 To run run a rest api service:
 
 ```shell
@@ -33,4 +35,17 @@ Prompts can be sent with a query parameter: `127.0.0.1:8000/?prompt=stable diffu
 
 ## Docker
 
-A `Dockerfile` is included, see `docker_cmds.sh` for commands to build and run the docker container.
+A `Dockerfile` is included, to build and run the docker container, run:
+
+```shell
+docker build -t stable-diffusion .
+docker run \
+    -d \
+    --name stable-diffusion \
+    -p 8501:8501 \
+    --gpus all \
+    stable-diffusion
+docker start stable-diffusion
+```
+
+The `--gpus all` flag can be ommitted to run on cpu, though image generation takes upward of a minute on cpu.
